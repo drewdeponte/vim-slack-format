@@ -19,10 +19,12 @@ pathogen](http://vimcasts.org/episodes/synchronizing-plugins-with-git-submodules
 If your installation method is the above recommended one, it should be as simple
 as running the following commands:
 
-		cd ~/.vim/
-		git submodule add git@github.com:uptech/vim-slack-format.git bundle/vim-slack-format
-		git add .
-		git commit -m "Added vim-slack-format plugin to my setup."
+```text
+cd ~/.vim/
+git submodule add git@github.com:uptech/vim-slack-format.git bundle/vim-slack-format
+git add .
+git commit -m "Added vim-slack-format plugin to my setup."
+```
 
 If you are using another method, you are on your own. I have been told that this
 plugin is compatible with [Vundle](http://github.com/gmarik/vundle) though I
