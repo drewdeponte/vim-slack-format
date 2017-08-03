@@ -10,16 +10,16 @@ endif
 " https://get.slack.help/hc/en-us/articles/202288908-Format-your-messages
 
 " bold - *word anotherword*
-syn region slackFormatBold start="\%(^\|\s\)\*\S\@=" end="\S\@<=\*\%($\|\s\)" keepend
+syn region slackFormatBold start="\%(^\|\s\)\*\S\@=" end="\S\@<=\*\%($\|\s\|\W\)" keepend
 
 " italic - _word anotherword_
-syn region slackFormatItalic start="\%(^\|\s\)_\S\@=" end="\S\@<=_\%($\|\s\)" keepend
+syn region slackFormatItalic start="\%(^\|\s\)_\S\@=" end="\S\@<=_\%($\|\s\|\W\)" keepend
 
 " strike through - ~word anotherword~
-syn region slackFormatStrike start="\%(^\|\s\)\~\S\@=" end="\S\@<=\~\%($\|\s\)" keepend
+syn region slackFormatStrike start="\%(^\|\s\)\~\S\@=" end="\S\@<=\~\%($\|\s\|\W\)" keepend
 
 "   inline code block `inline code`
-syn region slackFormatInlineCode start="\%(^\|\s\)\`\S\@=" end="\S\@<=\`\%($\|\s\)" keepend
+syn region slackFormatInlineCode start="\%(^\|\s\)\`\S\@=" end="\S\@<=\`\%($\|\s\|\W\)" keepend
 
 "   block of preformated fixed with code ```code and stuff``` 
 syn region slackFormatCodeBlock start="^\s*```" end="\s*```$" keepend
