@@ -22,10 +22,12 @@ syn region slackFormatStrike start="\%(^\|\s\)\~\S\@=" end="\S\@<=\~\%($\|\s\)" 
 syn region slackFormatInlineCode start="\%(^\|\s\)\`\S\@=" end="\S\@<=\`\%($\|\s\)" keepend
 
 "   block of preformated fixed with code ```code and stuff``` 
-syn region slackFormatCodeBlock start="^\s*```" end="\s*```$" keepend
+syn region slackFormatCodeBlock start="^\s*```" end="\s*```$" keepend fold
 
 "   > to block quote one paragraph
 "   >>> to block quote multiple paragraphs
+syn region slackFormatBlockQuote start="^>\s" end="$" contains=slackFormatBold,slackFormatItalic,slackFormatStrike,slackFormatInlineCode fold keepend
+syn region slackFormatBlockQuoteMultiline start="^>>>\s" end="\%$" contains=slackFormatBold,slackFormatItalic,slackFormatStrike,slackFormatInlineCode fold
 
 " Highlight
 
@@ -38,5 +40,8 @@ hi def link slackFormatItalic Italic
 hi def link slackFormatStrike Strike
 hi def link slackFormatInlineCode String
 hi def link slackFormatCodeBlock String
+hi def link slackFormatBlockQuote Comment
+hi def link slackFormatBlockQuoteMuliline Comment
 
 let b:current_syntax="slack"
+set foldmethod=syntax
