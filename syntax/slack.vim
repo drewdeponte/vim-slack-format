@@ -10,16 +10,16 @@ endif
 " https://get.slack.help/hc/en-us/articles/202288908-Format-your-messages
 
 " bold - *word anotherword*
-syn region slackFormatBold start="\%(^\|\s\)\*\S\@=" end="\S\@<=\*\%($\|\s\)" keepend
+syn region slackFormatBold start="\%(^\|\s\)\@<=\*\S\@=" end="\S\@<=\*\%($\|\s\|[[:punct:]]\)\@<=" keepend
 
 " italic - _word anotherword_
-syn region slackFormatItalic start="\%(^\|\s\)_\S\@=" end="\S\@<=_\%($\|\s\)" keepend
+syn region slackFormatItalic start="\%(^\|\s\)\@<=_\S\@=" end="\S\@<=_\%($\|\s\|[[:punct:]]\)\@<=" keepend
 
 " strike through - ~word anotherword~
-syn region slackFormatStrike start="\%(^\|\s\)\~\S\@=" end="\S\@<=\~\%($\|\s\)" keepend
+syn region slackFormatStrike start="\%(^\|\s\)\@<=\~\S\@=" end="\S\@<=\~\%($\|\s\|[[:punct:]]\)\@<=" keepend
 
 "   inline code block `inline code`
-syn region slackFormatInlineCode start="\%(^\|\s\)\`\S\@=" end="\S\@<=\`\%($\|\s\)" keepend
+syn region slackFormatInlineCode start="\%(^\|\s\)\`\S\@=" end="\S\@<=\`\%($\|\s\|[[:punct:]]\)\@<=" keepend
 
 "   block of preformated fixed with code ```code and stuff``` 
 syn region slackFormatCodeBlock start="^\s*```" end="\s*```$" keepend fold
@@ -38,7 +38,7 @@ hi def Strike term=reverse cterm=reverse gui=reverse
 hi def link slackFormatBold Bold
 hi def link slackFormatItalic Italic
 hi def link slackFormatStrike Strike
-hi def link slackFormatInlineCode String
+hi def link slackFormatInlineCode Type
 hi def link slackFormatCodeBlock String
 hi def link slackFormatBlockQuote Comment
 hi def link slackFormatBlockQuoteMuliline Comment
