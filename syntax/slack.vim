@@ -19,10 +19,10 @@ syn region slackFormatItalic start="\%(^\|\s\)\@<=_\S\@=" end="\S\@<=_\%($\|\s\|
 syn region slackFormatStrike start="\%(^\|\s\)\@<=\~\S\@=" end="\S\@<=\~\%($\|\s\|[[:punct:]]\)\@<=" keepend
 
 "   inline code block `inline code`
-syn region slackFormatInlineCode start="\%(^\|\s\)\`\S\@=" end="\S\@<=\`\%($\|\s\|[[:punct:]]\)\@<=" keepend
+syn region slackFormatInlineCode start="\%(^\|\s\)\`\S\@=" end="\S\@<=\`\%($\|\s\|[[:punct:]]\)\@<=" keepend contains=@NoSpell
 
 "   block of preformated fixed with code ```code and stuff``` 
-syn region slackFormatCodeBlock start="^\s*```" end="\s*```$" keepend fold
+syn region slackFormatCodeBlock start="^\s*```" end="\s*```$" keepend fold contains=@NoSpell
 
 "   > to block quote one paragraph
 "   >>> to block quote multiple paragraphs
